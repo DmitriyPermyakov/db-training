@@ -156,7 +156,11 @@ async function task_1_8(db) {
  *
  */
 async function task_1_9(db) {
-  throw new Error("Not implemented");
+  let result = await db.query(`
+        SELECT CustomerID, ContactName
+        FROM Customers
+        WHERE ContactName LIKE 'F__n%';
+`);
 }
 
 /**
