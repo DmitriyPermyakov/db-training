@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /********************************************************************************************
  *                                                                                          *
@@ -12,7 +12,6 @@
  *                                                                                          *
  ********************************************************************************************/
 
-
 /**
  *  Create a SQL query to return next data ordered by city and then by name:
  * | Employy Id | Employee Full Name | Title | City |
@@ -21,8 +20,8 @@
  *
  */
 async function task_1_1(db) {
-    // The first task is example, please follow the style in the next functions.
-    let result = await db.query(`
+  // The first task is example, please follow the style in the next functions.
+  let result = await db.query(`
         SELECT
            EmployeeID as "Employee Id",
            CONCAT(FirstName, ' ', LastName) AS "Employee Full Name",
@@ -31,7 +30,7 @@ async function task_1_1(db) {
         FROM Employees
         ORDER BY City, "Employee Full Name"
     `);
-    return result[0];
+  return result[0];
 }
 
 /**
@@ -43,7 +42,16 @@ async function task_1_1(db) {
  *
  */
 async function task_1_2(db) {
-    throw new Error("Not implemented");
+  let result = await db.query(`
+        SELECT
+            OrderID,
+            SUM(UnitPrice * Quantity) as [Order Total Price],
+            SUM( Discount) AS [Total Order Discount]
+        FROM [Order Details]
+        GROUP BY OrderID
+        ORDER BY OrderID DESC;
+    `);
+  return result[0];
 }
 
 /**
@@ -54,7 +62,7 @@ async function task_1_2(db) {
  *
  */
 async function task_1_3(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -67,7 +75,7 @@ async function task_1_3(db) {
  *
  */
 async function task_1_4(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -78,7 +86,7 @@ async function task_1_4(db) {
  *
  */
 async function task_1_5(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -91,7 +99,7 @@ async function task_1_5(db) {
  *
  */
 async function task_1_6(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -105,7 +113,7 @@ async function task_1_6(db) {
  *
  */
 async function task_1_7(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -117,7 +125,7 @@ async function task_1_7(db) {
  *
  */
 async function task_1_8(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -129,7 +137,7 @@ async function task_1_8(db) {
  *
  */
 async function task_1_9(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -140,7 +148,7 @@ async function task_1_9(db) {
  *
  */
 async function task_1_10(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -153,7 +161,7 @@ async function task_1_10(db) {
  *
  */
 async function task_1_11(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -166,7 +174,7 @@ async function task_1_11(db) {
  *
  */
 async function task_1_12(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -177,7 +185,7 @@ async function task_1_12(db) {
  *
  */
 async function task_1_13(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -188,7 +196,7 @@ async function task_1_13(db) {
  *
  */
 async function task_1_14(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -199,7 +207,7 @@ async function task_1_14(db) {
  *
  */
 async function task_1_15(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -210,7 +218,7 @@ async function task_1_15(db) {
  *
  */
 async function task_1_16(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -223,7 +231,7 @@ async function task_1_16(db) {
  *
  */
 async function task_1_17(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -235,7 +243,7 @@ async function task_1_17(db) {
  *
  */
 async function task_1_18(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -247,7 +255,7 @@ async function task_1_18(db) {
  *
  */
 async function task_1_19(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -259,7 +267,7 @@ async function task_1_19(db) {
  *
  */
 async function task_1_20(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -269,7 +277,7 @@ async function task_1_20(db) {
  * @return {array}
  */
 async function task_1_21(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 /**
@@ -280,30 +288,30 @@ async function task_1_21(db) {
  * @return {array}
  */
 async function task_1_22(db) {
-    throw new Error("Not implemented");
+  throw new Error("Not implemented");
 }
 
 module.exports = {
-    task_1_1: task_1_1,
-    task_1_2: task_1_2,
-    task_1_3: task_1_3,
-    task_1_4: task_1_4,
-    task_1_5: task_1_5,
-    task_1_6: task_1_6,
-    task_1_7: task_1_7,
-    task_1_8: task_1_8,
-    task_1_9: task_1_9,
-    task_1_10: task_1_10,
-    task_1_11: task_1_11,
-    task_1_12: task_1_12,
-    task_1_13: task_1_13,
-    task_1_14: task_1_14,
-    task_1_15: task_1_15,
-    task_1_16: task_1_16,
-    task_1_17: task_1_17,
-    task_1_18: task_1_18,
-    task_1_19: task_1_19,
-    task_1_20: task_1_20,
-    task_1_21: task_1_21,
-    task_1_22: task_1_22
+  task_1_1: task_1_1,
+  task_1_2: task_1_2,
+  task_1_3: task_1_3,
+  task_1_4: task_1_4,
+  task_1_5: task_1_5,
+  task_1_6: task_1_6,
+  task_1_7: task_1_7,
+  task_1_8: task_1_8,
+  task_1_9: task_1_9,
+  task_1_10: task_1_10,
+  task_1_11: task_1_11,
+  task_1_12: task_1_12,
+  task_1_13: task_1_13,
+  task_1_14: task_1_14,
+  task_1_15: task_1_15,
+  task_1_16: task_1_16,
+  task_1_17: task_1_17,
+  task_1_18: task_1_18,
+  task_1_19: task_1_19,
+  task_1_20: task_1_20,
+  task_1_21: task_1_21,
+  task_1_22: task_1_22,
 };
