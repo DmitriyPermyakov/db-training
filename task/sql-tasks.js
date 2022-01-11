@@ -80,7 +80,16 @@ async function task_1_3(db) {
  *
  */
 async function task_1_4(db) {
-  throw new Error("Not implemented");
+  let result = await db.query(`
+    SELECT CustomerID,
+        COUNT(OrderID) as [Total number of Orders],
+        COUNT(OrderID) * 100.0 / (SELECT COUNT(*) FROM Orders) as [% of all orders]
+    FROM Orders
+    GROUP BY CustomerID
+    ORDER BY [% of all orders] DESC, CustomerID;
+
+
+`);
 }
 
 /**
