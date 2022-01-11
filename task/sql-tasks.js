@@ -100,7 +100,11 @@ async function task_1_4(db) {
  *
  */
 async function task_1_5(db) {
-  throw new Error("Not implemented");
+  let result = await db.query(`
+        SELECT ProductID, ProductName, QuantityPerUnit
+        FROM Products
+        WHERE ProductName LIKE '[ABF]%';
+`);
 }
 
 /**
