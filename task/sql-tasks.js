@@ -220,7 +220,13 @@ async function task_1_12(db) {
  *
  */
 async function task_1_13(db) {
-  throw new Error("Not implemented");
+  let result = await db.query(`
+    SELECT
+        COUNT(
+            CASE Discontinued WHEN 'true' THEN 1 ELSE null END) AS [Discontinued],
+        COUNT(CASE Discontinued WHEN 'false' THEN 1 ELSE null END) as [Current]
+    FROM Products
+`);
 }
 
 /**
