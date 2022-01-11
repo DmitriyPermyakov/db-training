@@ -205,7 +205,11 @@ async function task_1_11(db) {
  *
  */
 async function task_1_12(db) {
-  throw new Error("Not implemented");
+  let result = await db.query(`
+        SELECT TOP 20 (MAX(UnitPrice) OVER(PARTITION BY UnitPrice)) AS price
+        FROM Products
+        ORDER BY UnitPrice DESC;
+`);
 }
 
 /**
