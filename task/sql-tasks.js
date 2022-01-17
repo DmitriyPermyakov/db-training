@@ -105,8 +105,15 @@ async function task_1_6(db) {
  *
  */
 async function task_1_7(db) {
-    throw new Error("Not implemented");
-}
+  let result = await db.query(`
+    SELECT leftEmp.EmployeeID,
+      (leftEmp.FirstName + ' ' + leftEmp.LastName) AS FullName,
+      COALESCE(emp.FirstName + ' ' + emp.LastName, '-') AS ReportsTo
+    FROM Employees AS leftEmp
+    LEFT JOIN Employees AS emp ON emp.EmployeeID = leftEmp.ReportsTo
+    ORDER BY leftEmp.EmployeeID
+`);
+return result[0];
 
 /**
  *
